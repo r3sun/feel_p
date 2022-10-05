@@ -6,30 +6,8 @@
 #include <math.h>
 #include <time.h>
 
-#if defined(unix) || defined(__unix) || defined(__unix__)
+#if defined(unix) || defined(__unix) || defined(__unix__) || defined(__linux__) || defined(linux) || defined(__linux)
 
-#include <unistd.h>
-#include <termios.h>
-
-int disable_line_buffer(void){
-	struct termios term, oldterm;
-	if (tcgetattr(STDIN_FILENO, &term)) return -1;
-	oldterm = term;
-	term.c_lflag &= ~(ECHO | ICANON);
-	if (tcsetattr(STDIN_FILENO, TCSANOW, &term)) return -1;
-	return 0;
-}
-int enable_line_buffer(void){
-	struct termios term, oldterm;
-	if (tcgetattr(STDIN_FILENO, &term)) return -1;
-	oldterm = term;
-	term.c_lflag &= (ECHO | ICANON);
-	if (tcsetattr(STDIN_FILENO, TCSANOW, &term)) return -1;
-	return 0;
-}
-#elif defined(__FreeBSD__)
-
-#elif defined(__linux__) || defined(linux) || defined(__linux)
 #include <unistd.h>
 #include <termios.h>
 
