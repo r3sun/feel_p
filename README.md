@@ -4,7 +4,7 @@
 It is just a psudo code generator that prints a line of code for each letter you type in the terminal. The source code it prints from is the source code of `ls.c`, `grep.c`, `ed.c`, and `echo.c` from the V6 UNIX source code from [UNIX Heritage Society](https://www.tuhs.org/).
 
 ## History
-I was feeling very bored as I was unable to write any program due to my exam being very close. So I decided to get the feeling of doing programming in my command line and created this thing.
+I was feeling very bored as I was unable to write any program due to my high school final exam being very close. So I decided to get the feeling of doing programming in my command line and created this thing.
 
 ## How to feel p:
 
